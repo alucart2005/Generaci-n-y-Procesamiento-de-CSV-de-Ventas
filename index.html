@@ -12,7 +12,20 @@
 
         <div class="upload-section">
             <h2>Subir archivo CSV</h2>
-            <div class="file-info">
+
+            <div class="file-input-container">
+                <input type="file" id="csvFile" accept=".csv" class="file-input">
+                <label for="csvFile" class="file-label">Seleccionar archivo CSV</label>
+                <span id="fileName" class="file-name">Ningún archivo seleccionado</span>
+            </div>
+
+            <div class="file-info-toggle">
+                <button id="infoToggle" class="info-toggle-btn">
+                    ℹ️ Información sobre formato CSV
+                </button>
+            </div>
+
+            <div class="file-info" id="fileInfo" style="display: none;">
                 <h3>Campos requeridos:</h3>
                 <ul>
                     <li><strong>id:</strong> Identificador único (número)</li>
@@ -31,11 +44,7 @@
                     </a>
                 </div>
             </div>
-            <div class="file-input-container">
-                <input type="file" id="csvFile" accept=".csv" class="file-input">
-                <label for="csvFile" class="file-label">Seleccionar archivo CSV</label>
-                <span id="fileName" class="file-name">Ningún archivo seleccionado</span>
-            </div>
+
             <button id="processBtn" class="process-btn" disabled>Procesar CSV</button>
         </div>
 

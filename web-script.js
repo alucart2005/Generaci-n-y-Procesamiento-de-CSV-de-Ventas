@@ -11,6 +11,8 @@ const resultsBody = document.getElementById('resultsBody');
 const totalRecordsSpan = document.getElementById('totalRecords');
 const totalPeriodsSpan = document.getElementById('totalPeriods');
 const exportBtn = document.getElementById('exportBtn');
+const infoToggle = document.getElementById('infoToggle');
+const fileInfo = document.getElementById('fileInfo');
 
 // Variables globales
 let csvData = [];
@@ -20,6 +22,7 @@ let processedResults = [];
 csvFileInput.addEventListener('change', handleFileSelection);
 processBtn.addEventListener('click', processCSV);
 exportBtn.addEventListener('click', exportResults);
+infoToggle.addEventListener('click', toggleFileInfo);
 
 // Manejar selección de archivo
 function handleFileSelection(event) {
@@ -243,4 +246,11 @@ function showError(message) {
 
 function hideError() {
     errorMessage.style.display = 'none';
+}
+
+// Toggle información del archivo
+function toggleFileInfo() {
+    const isVisible = fileInfo.style.display !== 'none';
+    fileInfo.style.display = isVisible ? 'none' : 'block';
+    infoToggle.textContent = isVisible ? 'ℹ️ Información sobre formato CSV' : 'ℹ️ Ocultar información';
 }
