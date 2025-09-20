@@ -11,6 +11,8 @@ function generateRandomRecord(id) {
     return { id, order_id, customer_id, total: parseFloat(total), fecha };
 }
 
+module.exports = { generateRandomRecord };
+
 // Función para escribir el CSV con 1M registros
 async function generateCSV(filename, numRecords) {
     const csvWriter = createCsvWriter({
@@ -113,4 +115,6 @@ async function main() {
     processCSV(inputCSV, outputCSV);
 }
 
-main().catch(console.error);
+if (require.main === module) {
+    main().catch(console.error);
+}
