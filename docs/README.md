@@ -50,7 +50,24 @@ npm install
 
 ## Uso
 
-### Programa Principal (1M registros)
+### Interfaz Web (Recomendado)
+Abre `index.html` en tu navegador web para usar la interfaz gráfica:
+
+1. **Subir archivo**: Haz clic en "Seleccionar archivo CSV" y elige tu archivo
+2. **Procesar**: Haz clic en "Procesar CSV" para calcular las estadísticas
+3. **Ver resultados**: Los resultados se mostrarán en una tabla organizada
+4. **Descargar**: Usa "Descargar CSV de Resultados" para guardar los resultados
+
+**Características de la interfaz web:**
+- Procesamiento en el navegador (sin subir datos al servidor)
+- Interfaz moderna y responsiva
+- Validación de archivos CSV
+- Vista previa de estadísticas
+- Exportación directa de resultados
+
+### Línea de Comandos
+
+#### Programa Principal (1M registros)
 ```bash
 npm start
 ```
@@ -59,17 +76,24 @@ Esto generará:
 - `data/ventas.csv`: Archivo con 1M registros aleatorios
 - `data/estadisticas_ventas.csv`: Archivo con estadísticas agrupadas
 
-### Ejemplo (10 registros)
+#### Ejemplo (10 registros)
 ```bash
 npm run ejemplo
 ```
 
 Esto procesará `data/ejemplo_ventas.csv` y generará `data/ejemplo_estadisticas.csv`
 
-### Tests
+#### Tests
 ```bash
 npm test
 ```
+
+### Formato del CSV de Entrada
+El archivo CSV debe tener las siguientes columnas (case-insensitive):
+- `id`: Identificador único (número)
+- `fecha`: Fecha en formato YYYY-MM-DD
+- `total`: Monto de la venta (número decimal)
+- Opcionales: `order_id`, `customer_id`
 
 ## Requisitos
 

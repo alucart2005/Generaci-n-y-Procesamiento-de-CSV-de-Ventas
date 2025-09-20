@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de CSV de Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Procesador de Estadísticas de Ventas</h1>
+
+        <div class="upload-section">
+            <h2>Subir archivo CSV</h2>
+            <div class="file-input-container">
+                <input type="file" id="csvFile" accept=".csv" class="file-input">
+                <label for="csvFile" class="file-label">Seleccionar archivo CSV</label>
+                <span id="fileName" class="file-name">Ningún archivo seleccionado</span>
+            </div>
+            <button id="processBtn" class="process-btn" disabled>Procesar CSV</button>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Resultados</h2>
+            <div class="stats-summary">
+                <div class="stat-card">
+                    <h3>Total de Registros</h3>
+                    <span id="totalRecords" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Períodos Procesados</h3>
+                    <span id="totalPeriods" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Año-Mes</th>
+                            <th>Número de Ventas</th>
+                            <th>Máximo</th>
+                            <th>Mínimo</th>
+                            <th>Media</th>
+                            <th>Desviación Típica</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="export-section">
+                <button id="exportBtn" class="export-btn">Descargar CSV de Resultados</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Procesando archivo...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+    <script src="web-script.js"></script>
+</body>
+</html>
