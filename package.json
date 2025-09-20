@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio",
+  "version": "1.0.0",
+  "description": "Este programa en JavaScript genera un archivo CSV con 1,000,000 de registros de ventas aleatorios y luego procesa ese archivo para calcular estadísticas agrupadas por año y mes.",
+  "main": "generate_and_process.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
