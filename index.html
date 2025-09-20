@@ -12,6 +12,25 @@
 
         <div class="upload-section">
             <h2>Subir archivo CSV</h2>
+            <div class="file-info">
+                <h3>Campos requeridos:</h3>
+                <ul>
+                    <li><strong>id:</strong> Identificador único (número)</li>
+                    <li><strong>fecha:</strong> Fecha en formato YYYY-MM-DD</li>
+                    <li><strong>total:</strong> Monto de la venta (número decimal)</li>
+                </ul>
+                <h3>Campos opcionales:</h3>
+                <ul>
+                    <li><strong>order_id:</strong> ID de la orden (número)</li>
+                    <li><strong>customer_id:</strong> ID del cliente (número)</li>
+                </ul>
+                <p class="info-note">💡 El archivo debe tener una fila de encabezados y al menos una fila de datos</p>
+                <div class="example-link">
+                    <a href="data/ejemplo_ventas.csv" download="ejemplo_ventas.csv" class="example-btn">
+                        📥 Descargar archivo de ejemplo
+                    </a>
+                </div>
+            </div>
             <div class="file-input-container">
                 <input type="file" id="csvFile" accept=".csv" class="file-input">
                 <label for="csvFile" class="file-label">Seleccionar archivo CSV</label>
